@@ -49,6 +49,14 @@ public class ReadConfig {
 		return IE_path;
 	}
 	
+	public String getUrl()
+	{
+		
+		String Login_Url=pro.getProperty("URL");
+		
+		return Login_Url;
+	}
+	
 			
 			
 

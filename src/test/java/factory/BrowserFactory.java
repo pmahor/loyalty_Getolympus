@@ -1,6 +1,7 @@
 package factory;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -13,8 +14,8 @@ public class BrowserFactory
 	{
 		if(browsername.equalsIgnoreCase("Chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver", Dataproviderfactory.config.getChromePath());
-			driver = new FirefoxDriver();
+			System.setProperty("webdriver.chrome.driver", Dataproviderfactory.getConfig().getChromePath());
+			driver = new ChromeDriver();
 		}
 		if(browsername.equalsIgnoreCase("IE"))
 		{

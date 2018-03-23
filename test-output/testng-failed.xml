@@ -3,11 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="unittest.DataProviderTest">
+      <class name="testcases.VerifyLoginPage">
         <methods>
-          <include name="testexceldata"/>
+          <include name="teardown"/>
+          <include name="verifyFBlogin"/>
+          <include name="logoutds"/>
+          <include name="SetUp"/>
         </methods>
-      </class> <!-- unittest.DataProviderTest -->
+      </class> <!-- testcases.VerifyLoginPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
