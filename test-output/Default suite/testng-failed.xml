@@ -6,8 +6,8 @@
       <class name="testcases.VerifyLoginPage">
         <methods>
           <include name="teardown"/>
-          <include name="verifyFBlogin"/>
-          <include name="logoutds"/>
+          <include name="verifypaypallogin"/>
+          <include name="verifyamazonlogin"/>
           <include name="SetUp"/>
         </methods>
       </class> <!-- testcases.VerifyLoginPage -->

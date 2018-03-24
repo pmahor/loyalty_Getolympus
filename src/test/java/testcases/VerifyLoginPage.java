@@ -12,12 +12,14 @@ import org.testng.annotations.Test;
 
 import factory.BrowserFactory;
 import factory.Dataproviderfactory;
+import pages.DashboardPage;
 import pages.LoginPage;
 
 public class VerifyLoginPage 
 {
 	WebDriver driver;
 	LoginPage loginpage;
+	VerifyDashboardpage dashpage2;
 	
 	@BeforeTest(description="This test case will verify Login Page")
 	public void SetUp()
@@ -32,6 +34,9 @@ public class VerifyLoginPage
 		
 		loginpage=PageFactory.initElements(driver,LoginPage.class);
 		
+		//for verify dashboard page to create object
+		dashpage2= new VerifyDashboardpage(driver);
+		
 	}
 	
 	@Test(priority=1)
@@ -42,25 +47,46 @@ public class VerifyLoginPage
 	}
 	
 	@Test(priority=2)
-	public void VerifyLoginPage()
+	public void VerifydasboardLogin()
 	{
 				
 		loginpage.Logintodashboard(Dataproviderfactory.getExceldata().getStringData(0,0),Dataproviderfactory.getExceldata().getStringData(0,1));	
+		//loginpage.logout();
 	}
 	 
-	@Test(priority=3)
-	public void logoutds()
-	{
-		loginpage.logout();
-	}
 	
 	
-	@Test(priority=4)
+	/*@Test(priority=2)
 	public void verifyFBlogin()
 	{	
 		loginpage.FBsociallogin(Dataproviderfactory.getExceldata().getStringData(1,0),Dataproviderfactory.getExceldata().getStringData(1,1));			
+		loginpage.logout();
+	}*/
+	
+	
+	
+	
+	
+	
+	/*@Test(priority=2)
+	public void verifyGmaillogin()
+	{
+		loginpage.Gplussociallogin(Dataproviderfactory.getExceldata().getStringData(0,0),Dataproviderfactory.getExceldata().getStringData(0,2));
+		
+	}*/
+	/*
+	@Test(priority=3)
+	public void verifyamazonlogin()
+	{
+		loginpage.Amazonsociallogin(Dataproviderfactory.getExceldata().getStringData(0,0),Dataproviderfactory.getExceldata().getStringData(0,1));
+		loginpage.logout();
 	}
-
+	
+	@Test(priority=4)
+	public void verifypaypallogin()
+	{
+		loginpage.Paypalsociallogin(Dataproviderfactory.getExceldata().getStringData(0,0),Dataproviderfactory.getExceldata().getStringData(0,3));
+	}*/
 	
 	@AfterTest
 	public void teardown()
