@@ -16,7 +16,7 @@ public class Library
 		TakesScreenshot ts=(TakesScreenshot)driver;
 		File src=ts.getScreenshotAs(OutputType.FILE);
 		
-		File dest=new File("./Screenshots"+tc_name+System.currentTimeMillis()+".png");
+		File dest=new File("D:/Pankaj BACKUP/Selenium/Workspace/Loyalty_Getolympus/Screenshots/"+tc_name+System.currentTimeMillis()+".png");
 		
 		try
 		{			

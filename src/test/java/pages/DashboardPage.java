@@ -10,6 +10,7 @@ public class DashboardPage
 	
 	@FindBy(xpath="//*[@id='tabs']/li[2]/a")
 	WebElement Earnpointlink;
+	//*[@id="tabs"]/li[2]/a
 	
 	@FindBy(xpath="//*[@id='tabs']/li[3]/a")
 	WebElement ManageRewardlink;

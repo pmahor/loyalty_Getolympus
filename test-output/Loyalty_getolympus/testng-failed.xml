@@ -2,11 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Loyalty_getolympus]">
   <test name="chromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="testcases.VerifyLoginPage">
         <methods>
           <include name="teardown"/>
+          <include name="verifypaypallogin"/>
           <include name="VerifydasboardLogin"/>
+          <include name="clickolog"/>
+          <include name="verifyFBlogin"/>
+          <include name="verifyamazonlogin"/>
           <include name="SetUp"/>
         </methods>
       </class> <!-- testcases.VerifyLoginPage -->

@@ -65,36 +65,39 @@ public class LoginPage
 	}
 	
 	public void Logintodashboard(String emailid, String pwd) 
-	{		
-		System.out.println("1Title"+driver.getTitle());
+	{	
+	try
+	{
+		
+		Thread.sleep(8000);	
+		closebtn.click();
 		emailaddr.sendKeys(emailid);
 		passwd.sendKeys(pwd);
 		submitbtn.click();
 		
-		System.out.println("Logged in successfully");		
-		try
-		{
-			Thread.sleep(8000);	
-			System.out.println("2Title"+driver.getTitle());
-			closebtn.click();
+		System.out.println("Logged through dashboard is successfully............");		
+		
+			//Thread.sleep(8000);	
+			//System.out.println("2Title"+driver.getTitle());
+			//closebtn.click();
 			
-			Thread.sleep(5000);
+		Thread.sleep(5000);
 			
 						
-			String parentwindow=driver.getWindowHandle();
+			/*String parentwindow=driver.getWindowHandle();
 			Set<String> winHandles=driver.getWindowHandles();
 			for(String winHandl : driver.getWindowHandles())
 			{
 				
 				driver.switchTo().window(winHandl);
 				
-			}
+			}*/
 		}
 		catch (InterruptedException e) 
 		{
 			e.printStackTrace();
 		}
-		System.out.println("3Title"+driver.getTitle());
+		//System.out.println("3Title"+driver.getTitle());
 		
 	}
 	
@@ -102,8 +105,8 @@ public class LoginPage
 	{
 		try 
 		{
-			Thread.sleep(10000);	
-			closebtn.click();
+			//Thread.sleep(10000);	
+			//closebtn.click();
 			Thread.sleep(5000);
 			fbbutton.click();
 			
@@ -120,15 +123,15 @@ public class LoginPage
 			fbpasswd.sendKeys(fbpwd);
 			fbloginbtn.click();
 			
-			System.out.println("Facebook login successfully");
+			System.out.println("Loggedin through Facebook is successfully............");	
 			Thread.sleep(8000);
 			
-			/*System.out.println(driver.getTitle());
+		//	System.out.println(driver.getTitle());
 			
 			driver.switchTo().window(parentwindow);
-			closebtn.click();
-			System.out.println(driver.getTitle());
-					*/
+			//closebtn.click();
+		//	System.out.println(driver.getTitle());
+					
 		} 
 		catch (InterruptedException e)
 		{
@@ -143,6 +146,7 @@ public class LoginPage
 		{			
 			Thread.sleep(30000);
 			
+			System.out.println("inside logout class...");
 			logoutlink.click();
 			logoutbtn.click();
 			
@@ -165,8 +169,8 @@ public class LoginPage
 	
 	@FindBy(xpath="//a[@id='s13_reg_gl']") WebElement gmailbtn;
 	@FindBy(xpath="//input[@id='identifierId']") WebElement gemailadd;
-//	@FindBy(xpath="//*[@id='identifierNext']/content/span") WebElement nextbtn1;
-	@FindBy(xpath="/html/head/body/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div/div/div/div/content/span") WebElement nextbtn1;
+	@FindBy(xpath="//*[@id='identifierNext']/content/span") WebElement nextbtn1;
+//  @FindBy(xpath="/html/head/body/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div/div/div/div/content/span") WebElement nextbtn1;
 	@FindBy(xpath="//input[@class='whsOnd zHQkBf']") WebElement epass;
 	@FindBy(xpath="//span[contains(.,'Next')]") WebElement nextbtn2;
 	//*[@id="identifierNext"]/content/span
@@ -205,12 +209,15 @@ public class LoginPage
 			epass.sendKeys(Passd);
 			nextbtn2.click();
 			
+			System.out.println("Logged through Gmail is successfully............");	
+			
+			driver.switchTo().window(parentwindow);
+			
 			
 		} catch (InterruptedException e) 
 		{
 			e.printStackTrace();
 		}
-		
 		
 	}
 	
@@ -247,11 +254,13 @@ public class LoginPage
 			executor.executeScript("arguments[0].click()", amazsubmitbtn);
 			
 			System.out.println("Amazon Loggedin successfully");
+			driver.switchTo().window(parentwindow);
 		} 
 		catch (InterruptedException e) 
 		{
 			e.printStackTrace();
 		}
+		
 			
 			
 		
@@ -295,6 +304,12 @@ public class LoginPage
 			executor1.executeScript("arguments[0].click()", Paypalloginbtn);
 			
 			System.out.println("Paypal Loggedin successfully");
+			driver.switchTo().window(parentwindow);
+			
+
+			Thread.sleep(10000);
+			
+			
 		} 
 		catch (InterruptedException e) 
 		{

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Loyalty_getolympus">
+<suite name="Loyalty_getolympus" parallel="false">
+
   <test name="chromeTest">
+  <parameter name="browser" value="chrome"></parameter>
     <classes>
-      <class name="testcases.VerifyLoginPage"/>
-      <class name="testcases.VerifyDashboardpage"/>
+            <class name="testcases.VerifyDashboardpage"/>
+            <class name="testcases.VerifyLoginPage"/>
     </classes>
-  </test> <!-- chromeTest -->
-</suite> <!-- Loyalty_getolympus -->
+  </test>
+</suite> 
